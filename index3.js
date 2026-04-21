@@ -1,6 +1,7 @@
 import OpenAI from "openai";
 import { autoResizeTextarea, checkEnvironment, setLoading } from "./utils.js";
 import { marked } from "marked";
+import DOMPurify from "dompurify";
 checkEnvironment();
 
 // Initialize an OpenAI client for your provider using env vars
@@ -58,8 +59,11 @@ async function handleGiftRequest(e) {
 
     console.log(response);
     const giftSuggestions = response.choices[0].message.content
+    const html = marked.parse(giftSuggestions)
 
-    outputContent.innerHTML = marked.parse(giftSuggestions);
+    const safeHTML = DOMPurify.sanitize(html)
+
+    outputContent.innerHTML = safeHTML;
   } catch (error) {
     console.error("Error fetching gift suggestions:", error);
     outputContent.innerHTML = "Sorry, I couldn't fetch gift suggestions at the moment. Please try again later.";
