@@ -56,12 +56,29 @@ async function handleGiftRequest(e) {
    *
    * 💡 Check the hints folder for more guidance!
    */
+  messages.push({
+    role: "user",
+    content: userPrompt
+  })
+
 
   // Set loading state
   setLoading(true);
 
-  // Clear loading state
+  const response = await openai.chat.completions.create({
+    model: process.env.AI_MODEL,
+    messages
+  })
+  
+  console.log(response);
+  const giftSuggestions = response.choices[0].message.content
+
+  outputContent.textContent = giftSuggestions;
+
+
   setLoading(false);
+
+
 }
 
 start();
