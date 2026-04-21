@@ -1,0 +1,14 @@
+OpenAI API URL
+https://api.openai.com/v1
+
+GROQ API URL
+AI_URL=https://api.groq.com/openai/v1
+
+OpenRouter API URL
+https://openrouter.ai/api/v1
+
+
+So the format for the env file will be:
+AI_URL = The AI API URL
+AI_KEY = YOUR SECRET AI KEY
+AI_MODEL = THE AI MODEL
