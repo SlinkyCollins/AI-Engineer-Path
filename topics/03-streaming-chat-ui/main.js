@@ -2,7 +2,7 @@
 import OpenAI from "openai";
 import { marked } from "marked";
 import DOMPurify from "dompurify";
-import { checkEnvironment, autoResizeTextarea, setLoading, showStream } from "./utils.js";
+import { checkEnvironment, autoResizeTextarea, setLoading, showStream } from "../../shared/utils.js";
 
 checkEnvironment();
 

@@ -1,8 +1,8 @@
 // Structured Outputs (using schema with Chat Completions and Responses API)
 import OpenAI from "openai/index.js";
-import { checkEnvironment, sleep } from "./utils.js";
-import { giftSchema } from "./schema.js"
-import { giftSchemaResponses } from "./schema-responses.js"
+import { checkEnvironment, sleep } from "../../shared/utils.js";
+import { giftSchema } from "../../shared/schema.js"
+import { giftSchemaResponses } from "../../shared/schema-responses.js"
 
 // Initialize OpenAI client with environment variables
 const openai = new OpenAI({

@@ -1,6 +1,6 @@
 // STREAMING CHAT COMPLETIONS API intro
 import OpenAI from "openai";
-import { checkEnvironment } from "./utils.js";
+import { checkEnvironment } from "../../shared/utils.js";
 
 checkEnvironment();
 

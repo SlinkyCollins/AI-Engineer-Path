@@ -1,5 +1,5 @@
 // CHAT COMPLETIONS API intro for Gift Genie app with SEPARATION OF BEHAVIOR AND INTENT in the prompt
-import { checkEnvironment } from "./utils.js"
+import { checkEnvironment } from "../../shared/utils.js"
 import OpenAI from "openai"
 
 // Initialize the OpenAI client using environment variables

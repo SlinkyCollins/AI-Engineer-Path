@@ -7,7 +7,7 @@ import {
     autoResizeTextarea,
     setLoading,
     showStream,
-} from "./utils.js";
+} from "../../shared/utils.js";
 
 checkEnvironment();
 

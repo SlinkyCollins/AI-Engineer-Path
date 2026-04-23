@@ -1,6 +1,6 @@
 // JSON Output Prompting Demo
 import OpenAI from "openai/index.js";
-import { checkEnvironment, sleep } from "./utils.js";
+import { checkEnvironment, sleep } from "../../shared/utils.js";
 
 // Initialize OpenAI client with environment variables
 const openai = new OpenAI({

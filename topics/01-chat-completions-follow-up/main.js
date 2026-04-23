@@ -1,5 +1,5 @@
 // CHAT COMPLETIONS API intro for user and assistant conversation with follow-up user message to refine suggestions based on the assistant's initial response
-import { checkEnvironment } from "./utils.js"
+import { checkEnvironment } from "../../shared/utils.js"
 import OpenAI from "openai"
 
 const openai = new OpenAI({

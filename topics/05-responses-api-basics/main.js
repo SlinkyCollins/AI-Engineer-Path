@@ -1,6 +1,6 @@
 // RESPONSES API intro
 import OpenAI from "openai";
-import { checkEnvironment } from "./utils.js";
+import { checkEnvironment } from "../../shared/utils.js";
 
 // Initialize OpenAI client with environment variables
 const openai = new OpenAI({
