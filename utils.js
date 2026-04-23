@@ -64,3 +64,6 @@ export function showStream() {
   outputContainer.classList.remove("hidden");
   outputContainer.classList.add("visible");
 }
+
+// Delay helper for pacing multiple API calls
+export const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
