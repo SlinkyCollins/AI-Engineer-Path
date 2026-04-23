@@ -11,10 +11,38 @@ const openai = new OpenAI({
 
 checkEnvironment();
 
-// Responses API request with a plain string input
+// Responses API request with a plain string input for comparison:
+
 const response = await openai.responses.create({
   model: process.env.AI_MODEL,
-  input: "Give me gift suggestions for someone who likes hiphop music.",
+  input: [
+    {
+      role: "system",
+      content: `You are the Gift Genie! 
+Your gift suggestions should feel thoughtful, specific, and genuinely useful. 
+Your response must be under 100 words. 
+Start directly with the gift suggestions. 
+Do not write an introduction or conclusion.`,
+    },
+    {
+      role: "user",
+      content: "Give me gift suggestions for my friend who likes hiphop music.",
+    },
+  ],
 });
 
-console.log(response);
+console.log(response.output_text);
+
+// CHAT COMPLETIONS API request with structured messages input for comparison:
+
+// const response = await openai.chat.completions.create({
+//   model: process.env.AI_MODEL,
+//   messages: [
+//     { role: "system", content: "..." },
+//     { role: "user", content: "..." },
+//   ],
+// });
+
+// console.log(response.choices[0].message.content);
+
+
