@@ -1,3 +1,4 @@
+// STREAMING CHAT COMPLETIONS API intro for Gift Genie app with FEW SHOT PROMPTING and Markdown rendering in the browser
 import OpenAI from "openai";
 import { marked } from "marked";
 import DOMPurify from "dompurify";
