@@ -5,9 +5,12 @@ app.use(express.json());
 
 app.post("/api/gift", (req, res) => {
   const { userPrompt } = req.body
+  const { examplePrompts } = req.body
   console.log(userPrompt)
+  console.log(examplePrompts)
 
-  res.json({ message: `You wished for: "${userPrompt}"` });
+  res.json({ message: `You wished for: "${userPrompt}". Example prompts were: ${examplePrompts.join(", ")}` });
+  res.end();
 })
 
 const PORT = 3001;

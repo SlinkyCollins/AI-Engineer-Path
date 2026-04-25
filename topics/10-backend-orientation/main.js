@@ -14,6 +14,12 @@ async function handleGiftRequest(e) {
   e.preventDefault();
 
   const userPrompt = userInput.value.trim();
+  const examplePrompts = [
+    "A thoughtful gift for a book lover",
+    "A unique present for a tech enthusiast",
+    "A creative gift for a friend who loves cooking",
+    "A relaxing spa day for a stressed-out friend"
+  ];
   if (!userPrompt) return;
 
   setLoading(true);
@@ -25,7 +31,7 @@ async function handleGiftRequest(e) {
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify({ userPrompt })
+      body: JSON.stringify({ userPrompt, examplePrompts })
     })
 
     if (!response.ok) {
