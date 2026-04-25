@@ -9,5 +9,14 @@ export default defineConfig(({ mode }) => {
       "process.env.AI_URL": JSON.stringify(env.AI_URL),
       "process.env.AI_MODEL": JSON.stringify(env.AI_MODEL),
     },
+    // Proxy API requests to Express backend during development
+    server: {
+      proxy: {
+        "/api": {
+          target: "http://localhost:3001",
+          changeOrigin: true,
+        },
+      },
+    },
   };
 });

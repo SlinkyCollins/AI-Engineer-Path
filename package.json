@@ -2,16 +2,22 @@
   "name": "aiei-1.3",
   "version": "0.0.1",
   "description": "1.3 Importing & Creating The OpenAI Client",
-  "main": "topics/09-web-search-ui/main.js",
+  "main": "topics/10-backend-orientation/main.js",
   "scripts": {
-    "start": "vite"
+    "start": "vite",
+    "type": "module",
+    "server": "node server.js",
+    "client": "vite",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "dependencies": {
     "dompurify": "^3.4.0",
+    "express": "^4.21.2",
     "marked": "^18.0.2",
     "openai": "^6.15.0"
   },
   "devDependencies": {
+    "concurrently": "^9.1.2",
     "vite": "^7.3.0"
   }
 }
